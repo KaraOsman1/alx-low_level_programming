@@ -1,23 +1,23 @@
-#include "main.h"
-
+#include "holberton.h"
 /**
- * string_toupper - Changes all lowercase letters
- * of a string to uppercase.
- * @str: The string to be changed.
- * Return: A pointer to the changed string.
- *
+ *string_toupper - changes all lowercase letters to uppercase letters
+ *@o: The variable that loops through the string and making them all into
+ *capital letters.
+ *Return: The value returned is 0.
  */
 
-char *string_toupper(char *str)
-
+char *string_toupper(char *o)
 {
-	int index = 0;
+	int i;
 
-	while (str[index])
+	i = 0;
+	while (o[i] != '\0')
 	{
-	if (str[index] >= 'a' && str[index] <= 'z')
-	str[index] -= 32;
-	index++;
+		if (o[i] >= 'a' && o[i] <= 'z')
+		{
+			o[i] -= 32;
+		}
+		i++;
 	}
-	return (str);
+	return (o);
 }
