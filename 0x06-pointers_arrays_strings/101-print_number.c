@@ -1,30 +1,25 @@
-julien@ubuntu:~/0x04$ cat 101-main.c
 #include "main.h"
 
 /**
- * main - check the code
+ * print_number - Prints any integer with putchar
+ * @n: Number to prints
  *
- * Return: Always 0.
+ * Return: Nothing
  */
-int main(void)
+void print_number(int n)
 {
-    print_number(98);
-    _putchar('\n');
-    print_number(402);
-    _putchar('\n');
-    print_number(1024);
-    _putchar('\n');
-    print_number(0);
-    _putchar('\n');
-    print_number(-98);
-    _putchar('\n');
-    return (0);
+	unsigned int x;
+
+	if (n < 0)
+	{
+		_putchar('-');
+		n *= -1;
+	}
+
+	x = n;
+
+	if (x / 10)
+		print_number(x / 10);
+
+	_putchar(x % 10 + '0');
 }
-julien@ubuntu:~/0x04$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 101-main.c 101-print_number.c -o 101-print_numbers
-julien@ubuntu:~/0x04$ ./101-print_numbers 
-98
-402
-1024
-0
--98
-julien@ubuntu:~/0x04$ 
