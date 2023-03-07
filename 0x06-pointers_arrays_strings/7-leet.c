@@ -1,29 +1,26 @@
-#include "holberton.h"
-/**
- *leet - Function that encodes a string into 1337.
- *@o: Pointer variable that holds the string.
- *Return: The string is returned once changed to leet.
- *
- */
-char *leet(char *o)
-{
-	int i, z;
-	char s[] = "aAeEoOtTlL";
-	char s2[] = "4433007711";
+#include "main.h"
 
-	i = 0;
-	while (o[i] != '\0')
+/**
+ * leet - encode into 1337 speak
+ * @n: Input value
+ * Return: n value
+ */
+
+char *leet(char *n)
+{
+	int i, j;
+	char s1[] = "aAeEoOtT1L";
+	char s2[] = "443300771l";
+
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		z = 0;
-		while (s[z] != '\0')
+		for (j = 0; j < 10; j++)
 		{
-			if (o[i] == s[z])
+			if (n[i] == s1[j])
 			{
-				o[i] = s2[z];
+				n[i] = s2[j];
 			}
-			z++;
 		}
-		i++;
 	}
-	return (o);
+	return (n);
 }
